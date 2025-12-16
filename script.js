@@ -26,3 +26,7 @@ document.querySelector('.secondary-btn')?.addEventListener('click', () => {
     console.log('Secondary button clicked!');
     // Add your custom functionality here
 });
+
+// Neon Trail Cursor Effect
+console.log('Website loaded successfully!');
+
