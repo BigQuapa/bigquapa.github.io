@@ -56,8 +56,8 @@ body::before {
 
 /* Navigation */
 nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 20px 60px;
     background: rgba(0, 20, 10, 0.4);
@@ -71,22 +71,28 @@ nav {
 }
 
 .logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    background: linear-gradient(135deg, #00ff88 0%, #00ffcc 50%, #00ff88 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nexoro-logo {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
+    transition: all 0.3s;
+}
+
+.nexoro-logo:hover {
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8));
+    transform: scale(1.05);
 }
 
 .nav-links {
     display: flex;
     gap: 40px;
     list-style: none;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -117,6 +123,7 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     backdrop-filter: blur(10px);
+    justify-self: end;
 }
 
 .cta-button:hover {
