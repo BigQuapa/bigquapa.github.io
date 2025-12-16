@@ -6,6 +6,23 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overscroll-behavior: none;
+}
+
+html {
+    background-color: #000000;
+
+}
+
+
+
+  body {
+    background-color: #000000;
+    min-height: 100vh;
+}
+
+
 body {
     font-family: 'Rajdhani', 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
@@ -148,6 +165,8 @@ h1 {
     position: relative;
     text-shadow: 0 0 80px rgba(0, 255, 136, 0.5);
 }
+
+
 
 /* Glass reflection effect on title */
 h1::before {
