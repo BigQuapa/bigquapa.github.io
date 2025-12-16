@@ -15,6 +15,7 @@ html {
 body {
     font-family: 'Rajdhani', 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
+    background-attachment: fixed;
     color: #00ff88;
     min-height: 100vh;
     overflow-x: hidden;
