@@ -15,16 +15,10 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
-    min-height: 100vh;
-    background-attachment: fixed;
-
-}
 
 body {
     font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
+    background: transparent;
     background-attachment: fixed;
     color: #00ff88;
     min-height: 100vh;
