@@ -5,24 +5,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-html, body {
+html {
+    background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
     overscroll-behavior: none;
 }
 
-html {
-    background-color: #000000;
-
-}
-
-
-
-  body {
-    background-color: #000000;
+body {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
+    color: #00ff88;
     min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
 }
 
-
+/*
 body {
     font-family: 'Rajdhani', 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #000000 0%, #0a1a0a 50%, #001a00 100%);
