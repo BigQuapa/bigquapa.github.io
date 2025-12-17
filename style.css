@@ -182,6 +182,11 @@ nav {
     margin-top: 50px;
 }
 
+/* Center cards within the grid cells */
+.industries-grid {
+    justify-items: center;
+}
+
 .industry-card {
     background: rgba(0, 20, 10, 0.4);
     backdrop-filter: blur(20px);
@@ -283,6 +288,23 @@ nav {
     color: #00ff88;
     padding-left: 10px;
 }
+
+/* Centers the content inside each industry card */
+.industry-card {
+    text-align: center;
+}
+
+/* Keep bullets readable, but center the list block within the card */
+.industry-features {
+    max-width: 520px;      /* tweak as you like */
+    margin: 25px auto 0;   /* centers the list container */
+    text-align: left;      /* keeps bullet text aligned cleanly */
+}
+
+
+
+  
+  
 
 /* GLASSY/GLOSSY TITLE EFFECT */
 h1 {
