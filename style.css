@@ -278,8 +278,23 @@ h1::before {
     padding: 40px;
     border-radius: 15px;
     border: 1px solid rgba(0, 255, 136, 0.2);
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 32px rgba(0, 255, 136, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
 }
 
 .feature-card h3 {
@@ -297,10 +312,14 @@ h1::before {
 }
 
 .feature-card:hover {
-    background: rgba(0, 255, 136, 0.1);
-    border-color: rgba(0, 255, 136, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 255, 136, 0.2);
+    background: rgba(0, 255, 136, 0.15);
+    border-color: #00ff88;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.4), 0 0 40px rgba(0, 255, 136, 0.3);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
 }
 
 /* Founders Section - GLASSY */
@@ -345,15 +364,15 @@ h1::before {
     padding: 60px;
     border-radius: 20px;
     border: 1px solid rgba(0, 255, 136, 0.2);
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 32px rgba(0, 255, 136, 0.1);
 }
 
 .founder-card:hover {
-    background: rgba(0, 255, 136, 0.08);
-    border-color: rgba(0, 255, 136, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+    background: rgba(0, 255, 136, 0.12);
+    border-color: #00ff88;
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 25px 80px rgba(0, 255, 136, 0.5), 0 0 50px rgba(0, 255, 136, 0.4);
 }
 
 .founder-image-container {
@@ -524,13 +543,14 @@ h1::before {
 }
 
 .capability-card:hover {
-    border-color: rgba(0, 255, 136, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+    border-color: #00ff88;
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 30px 80px rgba(0, 255, 136, 0.5), 0 0 60px rgba(0, 255, 136, 0.4), inset 0 0 30px rgba(0, 255, 136, 0.1);
 }
 
 .capability-card:hover::before {
     opacity: 1;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.2), transparent 70%);
 }
 
 .large-card {
@@ -704,7 +724,7 @@ h1::before {
     }
 }
 
-/* Circuit Board Animation */
+/* Circuit Board Animation - OPTIMIZED */
 .circuit-board {
     width: 200px;
     height: 120px;
@@ -712,11 +732,15 @@ h1::before {
     border-radius: 12px;
     background: rgba(0, 10, 5, 0.5);
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .circuit-svg {
     width: 100%;
     height: 100%;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 /* Circuit traces (lines) */
@@ -725,6 +749,7 @@ h1::before {
     stroke-width: 2;
     stroke-linecap: round;
     fill: none;
+    will-change: stroke, stroke-width;
 }
 
 .trace-1 {
@@ -756,6 +781,7 @@ h1::before {
     fill: rgba(0, 255, 136, 0.4);
     stroke: #00ff88;
     stroke-width: 1;
+    will-change: fill;
 }
 
 .node-1 {
@@ -797,7 +823,7 @@ h1::before {
 /* Data packets (moving dots) */
 .data-packet {
     fill: #00ffcc;
-    filter: drop-shadow(0 0 4px rgba(0, 255, 204, 0.8));
+    will-change: cx, cy, opacity;
 }
 
 .packet-1 {
@@ -812,7 +838,7 @@ h1::before {
     animation: packetMoveVertical 4s linear infinite 0.5s;
 }
 
-/* Animations */
+/* Animations - Optimized (NO FILTER PROPERTIES) */
 @keyframes tracePulse {
     0%, 100% {
         stroke: rgba(0, 255, 136, 0.3);
@@ -821,18 +847,15 @@ h1::before {
     50% {
         stroke: rgba(0, 255, 136, 0.8);
         stroke-width: 2.5;
-        filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
     }
 }
 
 @keyframes nodeGlow {
     0%, 100% {
         fill: rgba(0, 255, 136, 0.4);
-        filter: drop-shadow(0 0 2px rgba(0, 255, 136, 0.4));
     }
     50% {
         fill: rgba(0, 255, 204, 0.9);
-        filter: drop-shadow(0 0 8px rgba(0, 255, 204, 0.8));
     }
 }
 
@@ -983,6 +1006,45 @@ h1::before {
         opacity: 1;
     }
 }
+
+/* Incident Response Section */
+.incident-pulse{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+  }
+  
+  .alert-core{
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: rgba(0, 255, 160, 0.9);
+    box-shadow: 0 0 18px rgba(0, 255, 160, 0.6);
+  }
+  
+  .pulse-ring{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    border: 3px solid rgba(0, 255, 160, 0.55);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 160, 0.25));
+    animation: pulseOut 2.4s infinite ease-out;
+    opacity: 0.0;
+  }
+  
+  .ring-2{ animation-delay: 0.8s; }
+  .ring-3{ animation-delay: 1.6s; }
+  
+  @keyframes pulseOut{
+    0%   { transform: scale(0.6); opacity: 0.0; }
+    15%  { opacity: 0.9; }
+    100% { transform: scale(3.2); opacity: 0.0; }
+  }
+  
 
 /* Responsive Design */
 @media (max-width: 1200px) {
