@@ -218,9 +218,22 @@ nav {
 }
 
 .industry-icon {
-    font-size: 48px;
-    margin-bottom: 25px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
     display: block;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.4));
+    transition: all 0.4s ease;
+}
+
+.industry-card:hover .industry-icon {
+    filter: drop-shadow(0 0 25px rgba(0, 255, 136, 0.8));
+    transform: scale(1.1);
+}
+
+.industry-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .industry-card h3 {
@@ -1279,7 +1292,7 @@ h1::before {
     .section-header h2 {
         font-size: 36px;
     }
-    
+
     .industries-grid {
         grid-template-columns: 1fr;
     }
