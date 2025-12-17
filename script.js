@@ -1,4 +1,4 @@
-// You can add JavaScript functionality here
+//Added JavaScript functionality here
 // For example, button click handlers, smooth scrolling, etc.
 
 console.log('Website loaded successfully!');
@@ -16,7 +16,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Example: Add click handlers to buttons
+// Example: Added click handlers to buttons
 document.querySelector('.primary-btn')?.addEventListener('click', () => {
     console.log('Primary button clicked!');
     // Add your custom functionality here
@@ -24,9 +24,7 @@ document.querySelector('.primary-btn')?.addEventListener('click', () => {
 
 document.querySelector('.secondary-btn')?.addEventListener('click', () => {
     console.log('Secondary button clicked!');
-    // Add your custom functionality here
+    // Going to add custom functionality below: 
 });
 
-// Neon Trail Cursor Effect
-console.log('Website loaded successfully!');
 
