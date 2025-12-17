@@ -10,6 +10,27 @@ html {
     min-height: 100%;
 }
 
+/* iPhone-friendly viewport + safe-area defaults */
+:root{
+    --gutter: clamp(16px, 4vw, 60px);
+    --nav-h: 76px;
+  }
+  
+  /* iOS Safari uses dynamic toolbars; dvh prevents jumpy 100vh */
+  html, body{
+    min-height: 100dvh;
+  }
+  
+  /* Prevent media from overflowing on small screens */
+  img, svg, video, canvas{
+    max-width: 100%;
+    height: auto;
+  }
+  
+  button, a{
+    -webkit-tap-highlight-color: transparent;
+}
+  
 * {
     margin: 0;
     padding: 0;
@@ -301,8 +322,21 @@ nav {
     text-align: left;      /* keeps bullet text aligned cleanly */
 }
 
-
-
+/* Make nav padding fluid + notch-safe */
+nav{
+    min-height: var(--nav-h);
+    padding-left: max(var(--gutter), env(safe-area-inset-left));
+    padding-right: max(var(--gutter), env(safe-area-inset-right));
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: 12px;
+  }
+  
+  /* Ensure hero content doesn't hide under fixed nav */
+  .hero{
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    padding-top: calc(var(--nav-h) + 70px);
+}
   
   
 
@@ -1326,4 +1360,58 @@ h1::before {
     .section-title {
         font-size: 36px;
     }
+
+    
 }
+
+/* iPhone sizes (most are <= 430px CSS width) */
+@media (max-width: 430px){
+
+    /* NAV: tighten spacing + reduce aggressive letter spacing */
+    .nav-links{
+      gap: 14px;
+    }
+  
+    .nav-links a{
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  
+    .cta-button{
+      width: min(100%, 340px);
+      justify-self: center;
+    }
+  
+    /* HERO: fluid headline + more readable body */
+    h1{
+      font-size: clamp(38px, 10vw, 56px);
+      letter-spacing: -0.5px;
+    }
+  
+    .subtitle{
+      font-size: 16px;
+      line-height: 1.55;
+      padding-inline: 4px;
+    }
+  
+    /* Buttons: full-width feels native on iPhone */
+    .action-buttons{
+      width: 100%;
+    }
+  
+    .primary-btn, .secondary-btn{
+      width: min(100%, 360px);
+    }
+  
+    /* Cards: avoid overly large padding */
+    .industry-card{
+      padding: clamp(24px, 6vw, 40px);
+    }
+  
+    .section-title,
+    .features-section h2,
+    .section-header h2{
+      font-size: clamp(28px, 8vw, 36px);
+      letter-spacing: 2px;
+    }
+  }
