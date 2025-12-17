@@ -57,3 +57,31 @@ document.querySelectorAll('.capability-card').forEach(card => {
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(card);
 });
+
+// Open all external links in a new tab
+document.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+  
+    // Skip anchors, empty links, and non-http(s) links (mailto, tel, etc.)
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+  
+    // Treat only absolute http(s) links as candidates
+    if (!href.startsWith('http://') && !href.startsWith('https://')) return;
+  
+    const url = new URL(href);
+  
+    // Only external domains
+    if (url.host !== window.location.host) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+  });
+  
+ // Animates the industry cards on scroll
+document.querySelectorAll('.industry-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+  
