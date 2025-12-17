@@ -127,13 +127,34 @@
             <!-- Security First -->
             <div class="capability-card">
                 <div class="card-visual">
-                    <div class="security-pattern">
-                        <div class="stripe"></div>
-                        <div class="stripe"></div>
-                        <div class="stripe"></div>
-                        <div class="stripe"></div>
-                        <div class="stripe"></div>
-                        <div class="stripe"></div>
+                    <div class="circuit-board">
+                        <svg class="circuit-svg" viewBox="0 0 200 120">
+                            <!-- Horizontal traces -->
+                            <line class="trace trace-1" x1="0" y1="30" x2="200" y2="30" />
+                            <line class="trace trace-2" x1="0" y1="60" x2="200" y2="60" />
+                            <line class="trace trace-3" x1="0" y1="90" x2="200" y2="90" />
+                            
+                            <!-- Vertical traces -->
+                            <line class="trace trace-4" x1="50" y1="0" x2="50" y2="120" />
+                            <line class="trace trace-5" x1="100" y1="0" x2="100" y2="120" />
+                            <line class="trace trace-6" x1="150" y1="0" x2="150" y2="120" />
+                            
+                            <!-- Circuit nodes -->
+                            <circle class="node-circuit node-1" cx="50" cy="30" r="4" />
+                            <circle class="node-circuit node-2" cx="100" cy="30" r="4" />
+                            <circle class="node-circuit node-3" cx="150" cy="30" r="4" />
+                            <circle class="node-circuit node-4" cx="50" cy="60" r="4" />
+                            <circle class="node-circuit node-5" cx="100" cy="60" r="4" />
+                            <circle class="node-circuit node-6" cx="150" cy="60" r="4" />
+                            <circle class="node-circuit node-7" cx="50" cy="90" r="4" />
+                            <circle class="node-circuit node-8" cx="100" cy="90" r="4" />
+                            <circle class="node-circuit node-9" cx="150" cy="90" r="4" />
+                            
+                            <!-- Data packets -->
+                            <circle class="data-packet packet-1" cx="0" cy="30" r="3" />
+                            <circle class="data-packet packet-2" cx="0" cy="60" r="3" />
+                            <circle class="data-packet packet-3" cx="50" cy="0" r="3" />
+                        </svg>
                     </div>
                 </div>
                 <div class="card-content">
