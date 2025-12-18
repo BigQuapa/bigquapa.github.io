@@ -35,6 +35,17 @@ if (secondaryBtn) {
     });
 }
 
+// Beta program button click handler
+const betaBtn = document.querySelector('.beta-primary-btn');
+if (betaBtn) {
+    betaBtn.addEventListener('click', () => {
+        console.log('Get free security scan button clicked!');
+        // Add your custom functionality here
+        // Example: window.location.href = '/beta-signup';
+        // Or open a contact form modal
+    });
+}
+
 // Optional: Add intersection observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
