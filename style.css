@@ -121,6 +121,24 @@ nav {
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
 }
 
+/* Active page indicator */
+.nav-links a.active {
+    color: #00ffcc;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+}
+
 .cta-button {
     padding: 12px 28px;
     background: rgba(0, 255, 136, 0.1);
@@ -1620,24 +1638,6 @@ h1::before {
 }
 
 /* About Page Specific Styles */
-
-/* Active page indicator */
-.nav-links a.active {
-    color: #00ffcc;
-    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
-    position: relative;
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00ffcc, transparent);
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
-}
 
 .about-section {
     padding: 160px var(--gutter) 100px;
