@@ -7,33 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.body.classList.add('fade-in');
     }, 50);
-
-    // Handle all internal links for smooth transitions
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', e => {
-            const href = link.getAttribute('href');
-            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-            const linkPath = href ? href.split('#')[0] : '';
-            
-            // Only handle internal links that aren't anchors on the current page or external
-            if (href && 
-                !href.startsWith('#') && 
-                !href.startsWith('http') && 
-                !link.target &&
-                (linkPath !== '' && linkPath !== currentPath && linkPath !== './' + currentPath)) {
-                
-                e.preventDefault();
-                
-                // Fade out body
-                document.body.classList.remove('fade-in');
-                
-                // Navigate after transition completes
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 100); // Matches the 0.6s transition in CSS
-            }
-        });
-    });
 });
 
 // Smooth scroll for navigation links
