@@ -322,6 +322,181 @@ nav {
     text-align: left;      /* keeps bullet text aligned cleanly */
 }
 
+/* Beta Program Section */
+.beta-program-section {
+    padding: 120px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.beta-container {
+    background: rgba(0, 20, 10, 0.5);
+    backdrop-filter: blur(30px);
+    padding: 80px 60px;
+    border-radius: 30px;
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+}
+
+.beta-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.15), transparent 60%);
+    pointer-events: none;
+}
+
+.beta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
+    background: rgba(0, 255, 204, 0.1);
+    border: 1px solid rgba(0, 255, 204, 0.4);
+    border-radius: 30px;
+    color: #00ffcc;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.beta-pulse {
+    width: 8px;
+    height: 8px;
+    background: #00ffcc;
+    border-radius: 50%;
+    animation: betaPulse 2s ease-in-out infinite;
+}
+
+@keyframes betaPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7);
+        opacity: 1;
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(0, 255, 204, 0);
+        opacity: 0.8;
+    }
+}
+
+.beta-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00ff88 0%, #00ffcc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.beta-description {
+    font-size: 19px;
+    line-height: 1.7;
+    color: rgba(0, 255, 136, 0.8);
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-weight: 400;
+}
+
+.beta-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.beta-benefit {
+    padding: 35px;
+    background: rgba(0, 10, 5, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    transition: all 0.3s ease;
+}
+
+.beta-benefit:hover {
+    border-color: rgba(0, 255, 204, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.4));
+    transition: all 0.3s ease;
+}
+
+.beta-benefit:hover .benefit-icon {
+    filter: drop-shadow(0 0 20px rgba(0, 255, 204, 0.7));
+    transform: scale(1.1);
+}
+
+.beta-benefit h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #00ffcc;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.beta-benefit p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(0, 255, 136, 0.7);
+}
+
+.beta-cta {
+    margin-top: 50px;
+}
+
+.beta-primary-btn {
+    padding: 22px 50px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 204, 0.2));
+    border: 2px solid rgba(0, 255, 136, 0.5);
+    border-radius: 12px;
+    color: #00ff88;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+.beta-primary-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 255, 204, 0.3));
+    border-color: #00ffcc;
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px rgba(0, 255, 136, 0.4), 0 15px 40px rgba(0, 255, 136, 0.3);
+}
+
+.beta-note {
+    font-size: 13px;
+    color: rgba(0, 255, 136, 0.6);
+    margin-top: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
 /* Make nav padding fluid + notch-safe */
 nav{
     min-height: var(--nav-h);
@@ -1414,4 +1589,32 @@ h1::before {
       font-size: clamp(28px, 8vw, 36px);
       letter-spacing: 2px;
     }
-  }
+
+    /* Beta Section Mobile */
+    .beta-program-section {
+    padding: 80px 20px;
+    }
+
+    .beta-container {
+    padding: 50px 30px;
+    }
+
+    .beta-title {
+    font-size: 36px;
+    }
+
+    .beta-description {
+    font-size: 16px;
+    }
+
+    .beta-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    }
+
+    .beta-primary-btn {
+    width: 100%;
+    padding: 20px 40px;
+    font-size: 15px;
+    }
+}
