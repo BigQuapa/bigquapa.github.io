@@ -703,131 +703,6 @@ h1::before {
     opacity: 1;
 }
 
-/* Founders Section - GLASSY */
-.founders-section {
-    padding: 120px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.section-header h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    background: linear-gradient(135deg, #00ff88 0%, #00ffcc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.section-subtitle {
-    font-size: 18px;
-    color: rgba(0, 255, 136, 0.6);
-    letter-spacing: 1px;
-}
-
-.founder-card {
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    background: rgba(0, 20, 10, 0.4);
-    backdrop-filter: blur(20px);
-    padding: 60px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.1);
-}
-
-.founder-card:hover {
-    background: rgba(0, 255, 136, 0.12);
-    border-color: #00ff88;
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 25px 80px rgba(0, 255, 136, 0.5), 0 0 50px rgba(0, 255, 136, 0.4);
-}
-
-.founder-image-container {
-    position: relative;
-    flex-shrink: 0;
-}
-
-.founder-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
-    object-fit: cover;
-    border: 3px solid rgba(0, 255, 136, 0.4);
-    transition: all 0.3s;
-}
-
-.founder-card:hover .founder-image {
-    border-color: #00ff88;
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-}
-
-.image-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 280px;
-    height: 280px;
-    background: linear-gradient(135deg, #00ff88 0%, #00ffcc 100%);
-    border-radius: 20px;
-    opacity: 0;
-    filter: blur(40px);
-    z-index: -1;
-    transition: opacity 0.3s;
-}
-
-.founder-card:hover .image-glow {
-    opacity: 0.4;
-}
-
-.founder-info {
-    flex: 1;
-}
-
-.founder-info h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #00ff88;
-    text-transform: uppercase;
-}
-
-.founder-title {
-    font-size: 18px;
-    color: rgba(0, 255, 204, 0.9);
-    margin-bottom: 25px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.founder-bio {
-    font-size: 17px;
-    line-height: 1.8;
-    color: rgba(0, 255, 136, 0.7);
-    margin-bottom: 30px;
-}
-
-.founder-socials {
-    display: flex;
-    gap: 15px;
-}
-
 .social-link {
     padding: 10px 24px;
     background: rgba(0, 255, 136, 0.1);
@@ -1903,11 +1778,14 @@ h1::before {
     background: linear-gradient(90deg, transparent, #00ff88, transparent);
 }
 
+/* Updated System Initializing Badge with Loading Dots */
 .coming-soon-badge {
-    display: inline-block;
-    padding: 10px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
     background: rgba(0, 255, 136, 0.1);
-    border: 1px solid rgba(0, 255, 136, 0.4);
+    border: 2px solid rgba(0, 255, 136, 0.4);
     border-radius: 50px;
     color: #00ffcc;
     font-size: 14px;
@@ -1915,7 +1793,46 @@ h1::before {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 40px;
-    animation: glowPulse 2s infinite alternate;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+/* Loading dots container */
+.loading-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ffcc;
+    animation: dotPulse 1.4s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
 
 .coming-soon-title {
@@ -2039,4 +1956,3 @@ body.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
-
