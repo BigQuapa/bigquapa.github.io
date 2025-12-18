@@ -95,4 +95,24 @@ document.querySelectorAll('.industry-card').forEach(card => {
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(card);
 });
+
+// for the Home button - scroll to top if already on home page
+document.querySelectorAll('.nav-home').forEach(homeLink => {
+    homeLink.addEventListener('click', function(e) {
+        // Check if we're on the home page (index.html or just /)
+        const currentPage = window.location.pathname;
+        const isHomePage = currentPage.endsWith('index.html') || 
+                          currentPage.endsWith('/') || 
+                          currentPage === '/';
+        
+        if (isHomePage) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        // If not on home page, let the default link behavior work (navigate to index.html)
+    });
+});
   
