@@ -1872,3 +1872,157 @@ h1::before {
 .focus-icon {
     transition: all 0.3s ease;
 }
+/* Pricing Page / Coming Soon Styles */
+.pricing-section {
+    padding: 160px var(--gutter) 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.coming-soon-container {
+    background: rgba(0, 20, 10, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 30px;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 255, 136, 0.1);
+}
+
+.coming-soon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff88, transparent);
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    border-radius: 50px;
+    color: #00ffcc;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    animation: glowPulse 2s infinite alternate;
+}
+
+.coming-soon-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(48px, 10vw, 96px);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #00ff88 0%, #00ffcc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.coming-soon-text {
+    font-size: 20px;
+    color: rgba(0, 255, 136, 0.7);
+    max-width: 600px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+}
+
+.pricing-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.preview-card {
+    background: rgba(0, 255, 136, 0.05);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.preview-card:hover {
+    opacity: 0.8;
+    filter: grayscale(0.5);
+    transform: translateY(-5px);
+}
+
+.preview-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #00ff88;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.preview-card p {
+    font-size: 14px;
+    color: rgba(0, 255, 136, 0.6);
+}
+
+.notify-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+}
+
+.notify-input {
+    flex: 1;
+    background: rgba(0, 10, 5, 0.6);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 12px;
+    padding: 18px 25px;
+    color: #00ff88;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.notify-input:focus {
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.notify-btn {
+    padding: 18px 35px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 204, 0.2));
+    border: 2px solid rgba(0, 255, 136, 0.5);
+    border-radius: 12px;
+    color: #00ff88;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.notify-btn:hover {
+    background: rgba(0, 255, 136, 0.3);
+    border-color: #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+@media (max-width: 600px) {
+    .notify-form {
+        flex-direction: column;
+    }
+}
