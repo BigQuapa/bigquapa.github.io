@@ -124,3 +124,42 @@ document.querySelectorAll('.nav-home').forEach(homeLink => {
     });
 });
   
+// Contact form submission handler
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.form-submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    contactForm.innerHTML = '<div style="text-align: center; padding: 60px 20px;"><h3 style="color: #00ff88; font-size: 36px; margin-bottom: 20px;">✓ Message Sent Successfully!</h3><p style="color: rgba(0, 255, 136, 0.7); font-size: 18px; line-height: 1.6;">Thank you for reaching out. We\'ll get back to you within 24 hours.</p></div>';
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            }).catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                alert('Oops! Something went wrong. Please email us directly at your@email.com');
+            });
+        });
+    }
+});
+
+// Handle Cal.com buttons
+document.querySelectorAll('[data-url]').forEach(btn => {
+    btn.addEventListener('click', function() {
+        window.open(this.getAttribute('data-url'), '_blank');
+    });
+});
