@@ -3810,3 +3810,73 @@ body.fade-in {
         gap: 0;
     }
 }
+
+/* Fix service card alignment */
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .card-icon {
+    flex-shrink: 0;
+}
+
+.service-card h3 {
+    flex-shrink: 0;
+}
+
+.service-card p {
+    flex-shrink: 0;
+}
+
+.service-card .service-features {
+    flex: 1; /* This makes the list take up available space */
+    margin-bottom: 30px;
+}
+
+.service-card .pricing-tag {
+    margin-top: auto; /* Pushes pricing to bottom */
+}
+
+/* Ensure equal height cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    align-items: stretch; /* Makes cards equal height */
+}
+
+/* Fix service feature list alignment */
+.service-features {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+}
+
+.service-features li {
+    padding: 12px 0 12px 30px;
+    color: rgba(0, 255, 136, 0.8);
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-features li::before {
+    content: "→";
+    color: #00ffcc;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+}
+
+.service-features li:hover {
+    color: #00ff88;
+    padding-left: 35px;
+}
+/* @
