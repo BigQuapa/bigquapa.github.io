@@ -39,7 +39,7 @@
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
-        <a href="index.html#beta" class="cta-button">Get Started Here</a>
+        <a href="#contact" class="cta-button">Get Started Here</a>
     </nav>
 
     <section class="hero">
@@ -47,10 +47,10 @@
         <h1>Nexoro</h1>
         <p class="subtitle">Custom cybersecurity solutions for you. <br> Protecting what matters 
             most while giving you the freedom to grow with confidence.</p>
-        <div class="action-buttons">
-            <button class="primary-btn">Book a security consultation now.</button>
-            <button class="secondary-btn">See our services.</button>
-        </div>
+            <div class="action-buttons">
+                <button class="primary-btn" data-url="https://cal.com/shahakar-patel-3jjnlu/15min">Book a security consultation now.</button>
+                <button class="secondary-btn" onclick="window.location.href='cybersecurity.html'">See our services.</button>
+            </div>
     </section>
 
     <section class="beta-program-section" id="beta">
@@ -102,7 +102,7 @@
             </div>
             
             <div class="beta-cta">
-                <button class="beta-primary-btn">Get Your Free Security Scan</button>
+                <button class="beta-primary-btn" onclick="window.location.href='#contact'">Get your free security scan.</button>
                 <p class="beta-note">Limited spots available • No credit card required</p>
             </div>
         </div>
@@ -302,5 +302,33 @@
     </section>
 
     <script src="script.js"></script>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-subtitle">Let's discuss your cybersecurity needs</p>
+        
+        <form class="contact-form" action="https://formspree.io/f/meejeegq" method="POST">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Your Name *" required>
+                <input type="email" name="email" placeholder="Your Email *" required>
+            </div>
+            <div class="form-row">
+                <input type="text" name="company" placeholder="Company Name">
+                <input type="tel" name="phone" placeholder="Phone Number">
+            </div>
+            <select name="industry">
+                <option value="">Select Industry</option>
+                <option value="fintech">FinTech & Banking</option>
+                <option value="healthcare">Healthcare & Life Sciences</option>
+                <option value="retail">Retail & E-commerce</option>
+                <option value="technology">Technology</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea name="message" placeholder="Your Message *" rows="5" required></textarea>
+            <button type="submit" class="form-submit-btn">Send Message</button>
+        </form>
+    </section>
+
+
 </body>
 </html>
