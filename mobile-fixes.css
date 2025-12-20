@@ -1,0 +1,593 @@
+/* ============================================
+   MOBILE-FIRST RESPONSIVE FIXES FOR NEXORO
+   Add these styles to your existing CSS
+   ============================================ */
+
+/* Fix navigation for mobile */
+@media (max-width: 768px) {
+    nav {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 16px 20px;
+        gap: 16px;
+    }
+    
+    .logo {
+        justify-content: center;
+        grid-row: 1;
+    }
+    
+    .nav-links {
+        grid-row: 2;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .nav-links li {
+        flex: 0 0 auto;
+    }
+    
+    .nav-links a {
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 8px 12px;
+    }
+    
+    .cta-button {
+        grid-row: 3;
+        justify-self: stretch;
+        text-align: center;
+        width: 100%;
+        max-width: none;
+        font-size: 13px;
+        padding: 14px 20px;
+    }
+}
+
+/* Fix hero section for mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding: 140px 24px 80px;
+    }
+    
+    h1 {
+        font-size: clamp(36px, 9vw, 52px) !important;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+        margin-bottom: 24px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 0 8px;
+        max-width: 100%;
+    }
+    
+    .badge {
+        font-size: 11px;
+        padding: 8px 18px;
+        letter-spacing: 1.5px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        max-width: 360px;
+        font-size: 14px;
+        padding: 16px 32px;
+    }
+}
+
+/* Fix cybersecurity hero section */
+@media (max-width: 768px) {
+    .cyber-hero {
+        padding: 140px 24px 60px;
+        min-height: 80vh;
+    }
+    
+    .cyber-hero h1 {
+        font-size: clamp(32px, 8vw, 48px) !important;
+        line-height: 1.1;
+    }
+    
+    .cyber-hero .subtitle {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    .network-visualization {
+        display: none; /* Hide complex SVG on mobile for performance */
+    }
+}
+
+/* Fix section titles across all pages */
+@media (max-width: 768px) {
+    .section-title,
+    .capabilities-title,
+    .about-title,
+    .coming-soon-title {
+        font-size: clamp(28px, 7vw, 36px) !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+    
+    .section-header h2,
+    .split-content h2 {
+        font-size: clamp(26px, 6.5vw, 34px) !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2;
+    }
+    
+    .cta-content h2,
+    .development-content h2 {
+        font-size: clamp(28px, 7vw, 36px) !important;
+        line-height: 1.3;
+    }
+}
+
+/* Fix service cards grid */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+        padding: 0 8px;
+    }
+    
+    .service-card {
+        padding: 36px 24px;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .service-card h3 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    
+    .card-icon {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Fix industry cards */
+@media (max-width: 768px) {
+    .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    
+    .industry-card {
+        padding: 32px 24px;
+        max-width: 100%;
+    }
+    
+    .industry-card h3 {
+        font-size: 26px;
+    }
+    
+    .industry-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Fix beta program section */
+@media (max-width: 768px) {
+    .beta-program-section {
+        padding: 80px 20px;
+    }
+    
+    .beta-container {
+        padding: 50px 28px;
+        border-radius: 24px;
+    }
+    
+    .beta-title {
+        font-size: clamp(32px, 8vw, 42px);
+        line-height: 1.1;
+    }
+    
+    .beta-description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .beta-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .beta-primary-btn {
+        width: 100%;
+        padding: 18px 32px;
+        font-size: 15px;
+    }
+}
+
+/* Fix pricing/coming soon page */
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 140px 20px 80px;
+    }
+    
+    .coming-soon-container {
+        padding: 60px 28px;
+    }
+    
+    .coming-soon-badge {
+        font-size: 11px;
+        padding: 10px 20px;
+        letter-spacing: 2px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .pricing-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .notify-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .notify-input {
+        width: 100%;
+        font-size: 15px;
+    }
+    
+    .notify-btn {
+        width: 100%;
+        padding: 16px 28px;
+    }
+}
+
+/* Fix about page */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 140px 20px 80px;
+    }
+    
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .about-focus {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 28px 20px;
+    }
+    
+    .founder-card-about {
+        padding: 40px 28px;
+    }
+    
+    .founder-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .founder-social-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Fix contact form */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 100px 20px;
+    }
+    
+    .contact-form {
+        padding: 36px 24px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 15px;
+        padding: 14px 18px;
+    }
+    
+    .form-submit-btn {
+        font-size: 15px;
+        padding: 16px;
+    }
+}
+
+/* Fix CTA sections */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 60px 24px;
+        margin: 40px 16px;
+        border-radius: 24px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .primary-btn-large,
+    .secondary-btn-large {
+        width: 100%;
+        max-width: 360px;
+        font-size: 16px;
+        padding: 18px 36px;
+    }
+    
+    .trust-indicators {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+
+/* Fix process timeline */
+@media (max-width: 768px) {
+    .process-section {
+        padding: 80px 20px;
+    }
+    
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .timeline-connector {
+        display: none;
+    }
+    
+    .timeline-step p {
+        max-width: 100%;
+    }
+}
+
+/* Fix stats grid */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Fix compliance frameworks */
+@media (max-width: 768px) {
+    .compliance-frameworks {
+        justify-content: center;
+        gap: 16px;
+    }
+    
+    .framework-badge {
+        padding: 12px;
+        min-width: 100px;
+    }
+}
+
+/* Fix development section */
+@media (max-width: 768px) {
+    .development-section {
+        padding: 60px 20px;
+    }
+    
+    .development-content {
+        padding: 48px 28px;
+    }
+    
+    .dev-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Fix split sections */
+@media (max-width: 768px) {
+    .section-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .section-split.reverse {
+        direction: ltr;
+    }
+    
+    .scanning-animation,
+    .compliance-dashboard {
+        max-width: 280px;
+    }
+}
+
+/* Fix footer */
+@media (max-width: 768px) {
+    .nx-footer {
+        padding: 56px 20px 32px;
+    }
+    
+    .nx-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .nx-footer__tagline {
+        max-width: 100%;
+    }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .nav-links a {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    
+    h1 {
+        font-size: 32px !important;
+    }
+    
+    .beta-title,
+    .coming-soon-title {
+        font-size: 28px !important;
+    }
+    
+    .service-card h3,
+    .industry-card h3 {
+        font-size: 22px;
+    }
+}
+
+/* ============================================
+   PRIORITY FIX: NAVIGATION BANNER
+   This addresses the main wrapping issue
+   ============================================ */
+
+/* Override existing nav styles for mobile */
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 16px 20px !important;
+        gap: 16px !important;
+        min-height: auto !important;
+    }
+    
+    .logo {
+        width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+    
+    .nexoro-logo {
+        height: 36px;
+    }
+    
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px 12px !important;
+        width: 100%;
+        order: 2;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-links li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links a {
+        display: inline-block;
+        font-size: 11px !important;
+        letter-spacing: 1px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap;
+    }
+    
+    .cta-button {
+        width: 100% !important;
+        max-width: 340px !important;
+        text-align: center !important;
+        order: 3;
+        margin: 0 auto;
+    }
+}
+
+/* iPhone-specific fixes */
+@media (max-width: 430px) {
+    nav {
+        padding: 14px 16px !important;
+    }
+    
+    .nav-links {
+        gap: 6px 10px !important;
+    }
+    
+    .nav-links a {
+        font-size: 10px !important;
+        letter-spacing: 0.5px !important;
+        padding: 6px 10px !important;
+    }
+    
+    .cta-button {
+        font-size: 12px !important;
+        padding: 12px 20px !important;
+    }
+}
+
+/* Very small screens (iPhone SE) */
+@media (max-width: 375px) {
+    nav {
+        padding: 12px 14px !important;
+    }
+    
+    .nexoro-logo {
+        height: 32px;
+    }
+    
+    .nav-links a {
+        font-size: 9px !important;
+        padding: 5px 8px !important;
+    }
+    
+    .cta-button {
+        font-size: 11px !important;
+        padding: 10px 18px !important;
+        max-width: 300px !important;
+    }
+}
+
+/* Landscape orientation fix */
+@media (max-width: 768px) and (orientation: landscape) {
+    nav {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        padding: 12px 20px !important;
+    }
+    
+    .logo {
+        order: 1;
+        flex: 0 0 auto;
+        width: auto;
+    }
+    
+    .nav-links {
+        order: 2;
+        flex: 1 1 auto;
+        justify-content: center;
+        width: auto;
+        gap: 8px !important;
+    }
+    
+    .cta-button {
+        order: 3;
+        flex: 0 0 auto;
+        width: auto !important;
+        max-width: none !important;
+        padding: 10px 20px !important;
+    }
+}
