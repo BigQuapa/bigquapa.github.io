@@ -3879,11 +3879,4 @@ body.fade-in {
     color: #00ff88;
     padding-left: 35px;
 }
-
-/* MOBILE TEST */
-@media (max-width: 768px) {
-    nav {
-        background: red !important;
-    }
-}
 /* @
