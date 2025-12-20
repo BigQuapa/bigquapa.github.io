@@ -3178,3 +3178,95 @@ body.fade-in {
         gap: 0;
     }
 }
+
+/* ============================================
+   SIMPLE FIX: Push all content down on mobile
+   Add to BOTTOM of style.css
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Add space at the top of EVERY section */
+    section {
+        margin-top: 140px !important;
+    }
+    
+    /* Override for sections that already have margin */
+    .hero,
+    .cyber-hero,
+    .about-section,
+    .pricing-section,
+    .beta-program-section,
+    .industries-section,
+    .capabilities-section,
+    .contact-section,
+    .services-section,
+    .monitoring-section,
+    .compliance-section,
+    .process-section,
+    .development-section,
+    .cta-section {
+        margin-top: 140px !important;
+        padding-top: 20px !important;
+    }
+    
+    /* First section on the page needs EXTRA space */
+    body > section:first-of-type {
+        margin-top: 150px !important;
+    }
+}
+
+/* For smaller phones, reduce slightly */
+@media (max-width: 430px) {
+    section {
+        margin-top: 130px !important;
+    }
+    
+    .hero,
+    .cyber-hero,
+    .about-section,
+    .pricing-section,
+    .beta-program-section,
+    .industries-section,
+    .capabilities-section,
+    .contact-section,
+    .services-section,
+    .monitoring-section,
+    .compliance-section,
+    .process-section,
+    .development-section,
+    .cta-section {
+        margin-top: 130px !important;
+    }
+    
+    body > section:first-of-type {
+        margin-top: 140px !important;
+    }
+}
+
+/* iPhone SE and very small */
+@media (max-width: 375px) {
+    section {
+        margin-top: 120px !important;
+    }
+    
+    .hero,
+    .cyber-hero,
+    .about-section,
+    .pricing-section,
+    .beta-program-section,
+    .industries-section,
+    .capabilities-section,
+    .contact-section,
+    .services-section,
+    .monitoring-section,
+    .compliance-section,
+    .process-section,
+    .development-section,
+    .cta-section {
+        margin-top: 120px !important;
+    }
+    
+    body > section:first-of-type {
+        margin-top: 130px !important;
+    }
+}
