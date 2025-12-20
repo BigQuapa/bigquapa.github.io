@@ -16,21 +16,233 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cybersecurity.css">
     <link rel="stylesheet" href="mobile-fixes.css">
+    <style>
+        /* Dropdown Mobile Menu Styles */
+
+    /* Desktop: Hide hamburger completely */
+    .hamburger,
+    .mobile-menu {
+    display: none;
+}
+    /* Fixed Mobile Styles */
+
+    @media (max-width: 768px) {
+    /* Simple nav bar - FIXED LAYOUT */
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 18px 24px !important;
+        height: 70px !important;
+        grid-template-columns: unset !important;
+        grid-template-rows: unset !important;
+    }
+    
+    /* Logo on LEFT - No flex grow */
+    .logo {
+        order: 1 !important;
+        flex: 0 0 auto !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+    
+    /* Hamburger button on RIGHT - No flex grow */
+    .hamburger {
+        order: 2 !important;
+        flex: 0 0 auto !important;
+        margin-left: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        width: 30px !important;
+        height: 24px !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+        z-index: 1001 !important;
+    }
+    
+    .hamburger span {
+        display: block !important;
+        width: 100% !important;
+        height: 3px !important;
+        background: #00ff88 !important;
+        border-radius: 2px !important;
+        transition: 0.3s !important;
+    }
+    
+    /* 'X' animation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nexoro-logo {
+        height: 36px !important;
+    }
+    
+    /* Hide desktop nav */
+    nav > .nav-links,
+    nav > .cta-button {
+        display: none !important;
+    }
+    
+    /* DROPDOWN BOX - Slides down with fade animation */
+    .mobile-menu {
+        position: fixed !important;
+        top: 70px !important;
+        left: 20px !important;
+        right: 20px !important;
+        background: rgba(0, 20, 10, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 2px solid rgba(0, 255, 136, 0.3) !important;
+        border-radius: 16px !important;
+        padding: 30px 20px !important;
+        z-index: 1000 !important;
+        box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3) !important;
+        
+        /* Hidden by default - slides up and fades */
+        display: block !important;
+        max-height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        overflow: hidden !important;
+        transform: translateY(-30px) scale(0.95) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    /* Show when active - slides down and fades in */
+    .mobile-menu.active {
+        max-height: 600px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) scale(1) !important;
+    }
+    
+    /* Menu links - stacked vertically */
+    .mobile-menu .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 0 25px 0 !important;
+    }
+    
+    .mobile-menu .nav-links li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .mobile-menu .nav-links a {
+        display: block !important;
+        color: #00ff88 !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        transition: 0.3s !important;
+        text-align: left !important;
+    }
+    
+    .mobile-menu .nav-links a:hover {
+        background: rgba(0, 255, 136, 0.1) !important;
+        color: #00ffcc !important;
+    }
+    
+    /* CTA button in dropdown */
+    .mobile-menu .cta-button {
+        display: block !important;
+        color: #00ff88 !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        padding: 14px 20px !important;
+        border: 2px solid #00ff88 !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        transition: 0.3s !important;
+    }
+    
+    .mobile-menu .cta-button:hover {
+        background: rgba(0, 255, 136, 0.15) !important;
+    }
+    
+    /* Push content down */
+    body {
+        padding-top: 70px !important;
+    }
+}
+
+        /* Smaller screens */
+        @media (max-width: 430px) {
+        .mobile-menu {
+            left: 12px !important;
+            right: 12px !important;
+            padding: 25px 18px !important;
+        }
+        
+        .mobile-menu .nav-links a {
+            font-size: 16px !important;
+            padding: 10px 14px !important;
+        }
+    }
+    </style>
 </head>
 <body>
     <nav>
+        <!-- Hamburger (only visible on mobile) -->
+        <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Logo -->
         <div class="logo">
-            <img src="NexLogoEmpty.png" class="nexoro-logo" alt="Nexoro-Logo" />
-        </div>          
+            <a href="index.html">
+                <img src="NexLogoEmpty.png" class="nexoro-logo" alt="Nexoro-Logo" />
+            </a>
+        </div>
+        
+        <!-- Desktop nav links (hidden on mobile) -->
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#monitoring">Monitoring</a></li>
-            <li><a href="#compliance">Compliance</a></li>
+            <li><a href="cybersecurity.html">Cybersecurity</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
-        <a href="#contact" class="cta-button">Get Protected</a>
+        
+        <!-- Desktop CTA (hidden on mobile) -->
+        <a href="#contact" class="cta-button">Get Started Here</a>
     </nav>
-
+    
+    <!-- Mobile menu (only appears when hamburger is clicked) -->
+    <div class="mobile-menu">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cybersecurity.html">Cybersecurity</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#contact" class="cta-button">Get Started Here</a>
+    </div>
     <!-- Hero Section -->
     <section class="cyber-hero">
         <div class="matrix-rain"></div>
@@ -539,6 +751,33 @@
         </div>
     </section>
 
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                
+                if (mobileMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
